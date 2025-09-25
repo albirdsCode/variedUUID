@@ -1,23 +1,28 @@
 from random import randint
 class uuidGen:
-    def __init__(self):
-        pass
-
     def genFullUUID():
+        uuid=''
         characterString = "1234567890abcdefghijklmnopqrstuvwxyz"
-        return randint(0,len(characterString)+1), characterString, len(characterString)
+        for i in range(0, 36):
+            uuid += str(characterString[randint(0, len(characterString)-1)])
+        return str(uuid)
     
     def genNumUUID(uuidLength):
         numberString = "0123456789"
+        uuid = ''
         for i in range(0, int(uuidLength)):
             uuid += str(numberString[randint(0, len(numberString)-1)])
-        return uuid
+        return str(uuid)
     
     def customUUID(characterString:str, uuidLength:int):
-        uuid=""
+        uuid=''
         for i in range(0, int(uuidLength)):
             uuid += str(characterString[randint(0, len(characterString)-1)])
-        return uuid
+        return str(uuid)
 
-number = "AllCatsAreBeautiful1312161"
-print(uuidGen.customUUID(number, 32))
+    def myattUUID(uuidLength:int):
+        numberString = "123456789"
+        uuid = ''
+        for i in range(0, int(uuidLength)):
+            uuid += str(numberString[randint(0, len(numberString)-1)])
+        return str(uuid)
