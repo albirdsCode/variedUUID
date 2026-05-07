@@ -7,16 +7,16 @@ class uuidGen:
             uuid += str(characterString[randint(0, len(characterString)-1)])
         return str(uuid)
     
-    def genNumUUID(uuidLength):
+    def genNumUUID(uuidLength:int):
         numberString = "0123456789"
         uuid = ''
-        for i in range(0, int(uuidLength)):
+        for i in range(0, uuidLength):
             uuid += str(numberString[randint(0, len(numberString)-1)])
         return str(uuid)
     
     def customUUID(characterString:str, uuidLength:int):
         uuid=''
-        for i in range(0, int(uuidLength)):
+        for i in range(0, uuidLength):
             uuid += str(characterString[randint(0, len(characterString)-1)])
         return str(uuid)
 
